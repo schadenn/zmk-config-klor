@@ -23,7 +23,7 @@
 	left_encoder: encoder_left {
 		compatible = "alps,ec11";
 		label = "LEFT_ENCODER";
-		resolution = <1>;
+		resolution = <2>;
         	steps = <30>;
 		status = "disabled";
 	};
@@ -31,7 +31,7 @@
 	right_encoder: encoder_right {
 		compatible = "alps,ec11";
 		label = "RIGHT_ENCODER";
-		resolution = <1>;
+		resolution = <2>;
         	steps = <30>;
 		status = "disabled";
 	};
@@ -39,7 +39,7 @@
 	sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder &right_encoder>;
-        	triggers-per-rotation = <30>;
+        	triggers-per-rotation = <16>;
 	};
 
 	// TODO: RGB node(s)
