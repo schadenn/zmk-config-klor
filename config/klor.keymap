@@ -107,7 +107,7 @@ label= "BASE"                                                  ;
     &kp ESC   &kp Y     &kp X     &kp C     &kp V                   &kp B                   &trans       &trans    &kp N        &kp M         &comma    &dot       &kp MINUS  &kp RET
                                   &kp LSHFT &hm LC(LS(LALT)) SPACE  &kp LCTRL               &kp LALT     &kp DEL   &kp RGUI     &mo 1         &toadj     
                         >;
-            sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp LS(TAB) TAB>;
+            sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp TAB LS(TAB)>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -125,7 +125,7 @@ label= "ZEICHEN"                                                 ;
     &trans   &trans       &kp TILDE  &kp SLASH   &kp BSLH      &kp PIPE     &trans    &trans    &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT  &trans    &trans
                                      &trans      &trans        &trans       &trans    &trans    &trans    &trans    &trans  
                         >;
-            sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp LS(TAB) TAB>;
+            sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp TAB LS(TAB)>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -143,7 +143,7 @@ label= "NUMMERN"                                                 ;
     &trans    &kp N0  &kp N1  &kp N2  &kp N3  &mt COMMA DOT  &trans     &trans    &trans    &rgb_ug RGB_HUI   &trans  &rgb_ug RGB_BRD  &trans    &trans
                               &trans  &trans  &trans         &trans     &trans    &trans    &trans            &trans  
                         >;
-            sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp LS(TAB) TAB>;
+            sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp TAB LS(TAB)>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
