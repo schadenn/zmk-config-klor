@@ -32,16 +32,17 @@
 
 / {
     behaviors {
-               hm: homerow_mods {
+        hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <320>;
-            quick-tap-ms = <0>;
+            quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-       comma: comma_semi {
+
+        comma: comma_semi {
             compatible = "zmk,behavior-mod-morph";
             label = "comma_semi";
             #binding-cells = <0>;
@@ -90,8 +91,9 @@
                 key-positions = <0 1>;
                 bindings = <&kp ESC>;
             };
-        
     };
+
+
 
         keymap {
                 compatible = "zmk,keymap";
@@ -102,13 +104,21 @@
 // ┌───────────────────────────────────────────────────────────┐
 label= "BASE"                                                  ;
 // └───────────────────────────────────────────────────────────┘
-
+/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │    Q    │    W    │    E    │    R    │    T    │                    │    Z    │    U    │    I    │    O    │    P    │   
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │   TAB   │    A    │    S    │    D    │    F    │    G    │                    │    H    │    J    │    K    │    L    │    ?    │    <-   │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │   ESC   │    Y    │    X    │    C    │    V    │    B    ││  TAB   ││  TAB   ││    N    │    M    │    ,    │    .    │    -    │   RET   │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │  LSHFT  │  SPACE  │  LCTRL  │   LALT  ││   DEL   │  RGUI   │   MO1   │   MO2   │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
- //╷         ╷         ╷         ╷         ╷                       ╷                       ╷           ╷╷         ╷            ╷             ╷         ╷          ╷          ╷         ╷
+//╷         ╷         ╷         ╷         ╷                       ╷                       ╷           ╷╷         ╷            ╷             ╷         ╷          ╷          ╷         ╷
               &kp Q     &kp W     &kp E     &kp R                   &kp T                                          &kp Z        &kp U         &kp I     &kp O      &kp P
     &kp TAB   &kp A     &kp S     &kp D     &kp F                   &kp G                                          &kp H        &kp J         &kp K     &kp L      &quest     &kp BSPC
     &kp ESC   &kp Y     &kp X     &kp C     &kp V                   &kp B                   &trans       &trans    &kp N        &kp M         &comma    &dot       &kp MINUS  &kp RET
-                                  &kp LSHFT &hm LC(LS(LALT)) SPACE  &kp LCTRL               &kp LALT     &kp DEL   &kp RGUI     &mo 1         &toadj     
+                                  &kp LSHFT &hm LC(LS(LALT)) SPACE  &kp LCTRL               &kp LALT     &kp DEL   &kp RGUI     &mo 1         &mo 2      
                         >;
             sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp TAB LS(TAB)>;
                 };
@@ -116,11 +126,10 @@ label= "BASE"                                                  ;
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
-                signs_layer {
+                lower_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "ZEICHEN"                                                 ;
+label= "ZEICHEN"                                               ;
 // └───────────────────────────────────────────────────────────┘
-
  bindings = <
  //╷        ╷            ╷          ╷           ╷             ╷            ╷        ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
              &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT   &kp CARET                        &kp AMPS  &kp STAR  &kp SEMI  &kp PLUS  &trans
@@ -134,45 +143,26 @@ label= "ZEICHEN"                                                 ;
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
-                num_layer {
+                raise_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "NUMMERN"                                                 ;
-// └───────────────────────────────────────────────────────────┘
-
- bindings = <
- //╷         ╷       ╷       ╷       ╷       ╷              ╷         ╷╷         ╷         ╷                 ╷       ╷                ╷         ╷         ╷
-              &trans  &kp N7  &kp N8  &kp N9  &kp MINUS                           &trans    &rgb_ug RGB_EFF   &kp UP  &rgb_ug RGB_BRI  &trans         
-    &trans    &trans  &kp N4  &kp N5  &kp N6  &kp PLUS                            &kp LEFT  &kp DOWN          &kp UP  &kp RIGHT        &trans    &trans  
-    &trans    &kp N0  &kp N1  &kp N2  &kp N3  &mt COMMA DOT  &trans     &trans    &trans    &rgb_ug RGB_HUI   &trans  &rgb_ug RGB_BRD  &trans    &trans
-                              &trans  &trans  &trans         &trans     &trans    &trans    &trans            &trans  
-                        >;
-            sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp TAB LS(TAB)>;
-                };
-
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-
-                adjust_layer {
-// ┌───────────────────────────────────────────────────────────┐
-label= "ADJUST"                                                ;
+label= "NUMMERN"                                               ;
 // └───────────────────────────────────────────────────────────┘
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │         │         │         │         │         │                    │         │         │         │         │         │
+             │         │         │         │         │         │                    │         │         │    Ü    │         │         │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │         │         │         │         │         │                    │         │         │         │         │         │         │
+   │    Ä    │         │    ß    │         │         │         │                    │         │         │         │         │    Ö    │         │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
    │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │         │         │         │         ││         │         │         │         │  
+                                 │ ADJUST  │         │         │         ││         │         │         │         │  
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
- //╷                 ╷                   ╷         ╷          ╷                  ╷                  ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-                      &rgb_ug RGB_TOG     &trans    &trans     &rgb_ug RGB_SPI    &rgb_ug RGB_EFF                         &trans    &trans    &trans    &trans    &bt BT_CLR   
-    &rgb_ug RGB_BRI   &trans              &trans    &trans     &rgb_ug RGB_SPD    &rgb_ug RGB_EFR                         &trans    &trans    &trans    &trans    &trans   &bt BT_SEL 0 
-    &rgb_ug RGB_BRD   &trans              &trans    &trans     &trans             &trans             &trans     &trans    &trans    &trans    &trans    &trans    &trans   &bt BT_SEL 1    
-                                                    &soft_off  &trans             &trans             &to 0      &to 0     &trans    &trans    &trans    
+ //╷         ╷       ╷       ╷       ╷       ╷              ╷         ╷╷         ╷         ╷                 ╷       ╷                ╷         ╷         ╷
+              &trans  &kp N7  &kp N8  &kp N9  &kp MINUS                           &trans    &rgb_ug RGB_EFF   &kp UP  &rgb_ug RGB_BRI  &trans         
+    &trans    &trans  &kp N4  &kp N5  &kp N6  &kp PLUS                            &kp LEFT  &kp DOWN          &kp UP  &kp RIGHT        &trans    &bt BT_SEL 0  
+    &bt BT_CLR    &kp N0  &kp N1  &kp N2  &kp N3  &mt COMMA DOT  &trans     &trans    &trans    &rgb_ug RGB_HUI   &trans  &rgb_ug RGB_BRD  &trans    &bt BT_SEL 1
+                              &trans  &trans  &trans         &trans     &trans    &trans    &trans            &trans  
                         >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp LS(TAB) TAB>;
                 };
-        };
 };
