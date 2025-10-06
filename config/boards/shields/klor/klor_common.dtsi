@@ -15,6 +15,7 @@
 
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
+		wakeup-source;
 		label = "KSCAN";
 
 		diode-direction = "col2row";		
@@ -24,6 +25,7 @@
 		compatible = "alps,ec11";
 		label = "LEFT_ENCODER";
 		resolution = <4>;
+        	steps = <30>;
 		status = "disabled";
 	};
 
@@ -31,15 +33,24 @@
 		compatible = "alps,ec11";
 		label = "RIGHT_ENCODER";
 		resolution = <4>;
+        	steps = <30>;
 		status = "disabled";
 	};
 
 	sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder &right_encoder>;
+        	triggers-per-rotation = <16>;
 	};
 
-	// TODO: RGB node(s)
+	behaviors {
+	        hw_soft_off: hw_soft_off {
+	            compatible = "zmk,behavior-soft-off";
+	            #binding-cells = <0>;
+	            hold-time-ms = <5000>;
+	        };
+   	};
+
 };
 
 &pro_micro_i2c {
