@@ -28,7 +28,7 @@
 #define BASE   0
 #define LOWER  1
 #define RAISE  2
-#define ADJUST 3
+#define MOUSE 3
 
 &soft_off {
     hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
